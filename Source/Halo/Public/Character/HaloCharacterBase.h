@@ -6,7 +6,7 @@
 #include "GameFramework/Character.h"
 #include "HaloCharacterBase.generated.h"
 
-UCLASS()
+UCLASS(Abstract)
 class HALO_API AHaloCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
@@ -17,4 +17,6 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<UStaticMeshComponent> Weapon;
 };
